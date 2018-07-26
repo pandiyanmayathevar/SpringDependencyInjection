@@ -7,13 +7,16 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 //import org.springframework.context.annotation.ComponentScan;
 
 //@ComponentScan("com.hpit")
-@SpringBootApplication
+//@SpringBootApplication
+@Configuration
 
 //@SpringBootApplicationThe annotation is equivalent to using @Configuration, @EnableAutoConfiguration, and @ComponentScan with their default attributes
 @ComponentScan("com.hpit.DataService")
+//@ComponentScan
 public class dsSpringApplication {
 
     private static  Logger logger = LoggerFactory.getLogger(dsSpringApplication.class);
@@ -22,7 +25,8 @@ public class dsSpringApplication {
 
 
 		//ApplicationContext applicationContext = SpringApplication.run(dsSpringBootApplication.class, args);
-		try (AnnotationConfigApplicationContext applicationContext =
+		try (
+		        AnnotationConfigApplicationContext applicationContext =
 					 new AnnotationConfigApplicationContext(
 							 dsSpringApplication.class)) {
 
@@ -42,6 +46,7 @@ public class dsSpringApplication {
 //			System.out.println(bol1);
 //			System.out.println("Message Implementation instance -> " + emailImpl1);
 //			System.out.println("");
+
 
 		}
 
